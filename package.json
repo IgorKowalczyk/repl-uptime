@@ -1,0 +1,36 @@
+{
+  "name": "@igorkowalczyk/repl-uptime",
+  "version": "1.2.0",
+  "description": "Don't let your repl go to sleep! Create a http server with just one line of code and keep pinging it! ",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "test": "mocha tests/*.js --exit",
+    "format:check": "prettier --check .",
+    "format": "prettier --write . --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorKowalczyk/repl-uptime.git"
+  },
+  "keywords": [
+    "replit",
+    "repl",
+    "express",
+    "api",
+    "server",
+    "uptime"
+  ],
+  "author": "Igor Kowalczyk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IgorKowalczyk/repl-uptime/issues"
+  },
+  "homepage": "https://github.com/IgorKowalczyk/repl-uptime#readme",
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "chai-http": "^4.3.0",
+    "mocha": "^9.2.2",
+    "prettier": "^2.6.2"
+  }
+}
