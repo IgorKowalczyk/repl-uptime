@@ -10,9 +10,6 @@ function config(options = {}) {
   if (req.url === custom_url) {
    res.writeHead(200);
    return res.end(custom_response);
-  } else {
-   res.writeHead(404);
-   return res.end("404 Not Found!");
   }
  };
  const server = createServer(request);
