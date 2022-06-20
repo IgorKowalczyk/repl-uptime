@@ -1,6 +1,6 @@
 {
   "name": "@igorkowalczyk/repl-uptime",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "🤙 Don't let your repl go to sleep! Create a http server with just one line of code and keep pinging it! ",
   "main": "index.js",
   "module": "index.js",
