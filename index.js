@@ -1,6 +1,6 @@
 "use strict";
 
-const { createServer } = require("http");
+const { createServer } = require("node:http");
 
 function config(options = {}) {
  let port = options.port || 8080;

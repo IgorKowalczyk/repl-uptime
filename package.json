@@ -13,6 +13,18 @@
     "type": "git",
     "url": "git+https://github.com/IgorKowalczyk/repl-uptime.git"
   },
+  "bugs": {
+    "url": "https://github.com/IgorKowalczyk/repl-uptime/issues"
+  },
+  "homepage": "https://github.com/IgorKowalczyk/repl-uptime#readme",
+  "devDependencies": {
+    "prettier": "^2.6.2"
+  },
+  "files": [
+    "index.js"
+  ],
+  "author": "Igor Kowalczyk",
+  "license": "MIT",
   "keywords": [
     "replit",
     "repl",
@@ -21,16 +33,5 @@
     "server",
     "uptime"
   ],
-  "author": "Igor Kowalczyk",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/IgorKowalczyk/repl-uptime/issues"
-  },
-  "files": [
-    "index.js"
-  ],
-  "homepage": "https://github.com/IgorKowalczyk/repl-uptime#readme",
-  "devDependencies": {
-    "prettier": "^2.6.2"
-  }
+  "packageManager": "pnpm@7.18.2"
 }
