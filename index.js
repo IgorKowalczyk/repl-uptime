@@ -14,8 +14,9 @@ function config(options = {}) {
   }
  };
  const server = createServer(request);
- server.listen(port);
- if (options.debug) console.log(`::debug:: [repl-uptime] => Server listening on port ${port}`);
+ server.listen(port, () => {
+  if (options.debug) console.log(`::debug:: [repl-uptime] => Server listening on port ${port}`);
+ });
 }
 
 module.exports = { config };
