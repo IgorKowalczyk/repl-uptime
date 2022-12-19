@@ -30,6 +30,6 @@ jobs:
    - name: 🚀 Install dependencies
      run: pnpm install
    - name: 🚀 Publish package
-     run: pnpm publish --access public --branch ${{ github.head_ref }}
+     run: pnpm publish --access public --publish-branch ${{ github.head_ref }}
      env:
       NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
