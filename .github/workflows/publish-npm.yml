@@ -32,4 +32,4 @@ jobs:
    - name: 🚀 Publish package
      run: pnpm publish --access public --publish-branch ${{ github.head_ref }} --no-git-checks
      env:
-      NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
+      NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
