@@ -19,9 +19,9 @@
   },
   "homepage": "https://github.com/IgorKowalczyk/repl-uptime#readme",
   "devDependencies": {
-    "eslint": "^8.0.1",
-    "eslint-config-prettier": "^8.5.0",
-    "prettier": "^2.6.2"
+    "eslint": "8.0.1",
+    "eslint-config-prettier": "8.5.0",
+    "prettier": "2.6.2"
   },
   "files": [
     "index.js"
