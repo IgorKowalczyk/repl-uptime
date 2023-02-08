@@ -36,5 +36,5 @@
     "server",
     "uptime"
   ],
-  "packageManager": "pnpm@7.26.3"
+  "packageManager": "pnpm@7.27.0"
 }
