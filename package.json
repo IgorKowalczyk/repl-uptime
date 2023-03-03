@@ -6,8 +6,8 @@
   "module": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "format:check": "prettier --check .",
-    "format": "prettier --write . --ignore-unknown",
+    "format:check": "prettier --check --cache .",
+    "format": "prettier --write . --ignore-unknown --cache",
     "lint": "eslint . --ext .js,.ts"
   },
   "repository": {
