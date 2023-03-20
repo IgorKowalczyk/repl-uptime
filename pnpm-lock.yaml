@@ -4,14 +4,12 @@ specifiers:
   '@igorkowalczyk/eslint-config': 1.0.3
   '@igorkowalczyk/prettier-config': 1.0.3
   eslint: 8.36.0
-  eslint-config-prettier: 8.8.0
   prettier: 2.8.5
 
 devDependencies:
   '@igorkowalczyk/eslint-config': 1.0.3_prettier@2.8.5
   '@igorkowalczyk/prettier-config': 1.0.3
   eslint: 8.36.0
-  eslint-config-prettier: 8.8.0_eslint@8.36.0
   prettier: 2.8.5
 
 packages:
