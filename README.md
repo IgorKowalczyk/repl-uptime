@@ -1,9 +1,12 @@
-<img width="170" height="170" align="left" style="float: left; margin: 0 10px 0 0; border-radius: 50%;" alt="Replit Logo" src="https://user-images.githubusercontent.com/49127376/163621584-81a05476-a4ba-4f0d-affa-a378f338a0e7.png">
+<img width="170" height="170" align="left" style="float: left; margin: 0 10px 0 0; border-radius: 50%;" alt="Replit Logo" src="https://github.com/IgorKowalczyk/repl-uptime/assets/49127376/7a63817d-1b90-4be2-a3c6-3cbee075dbf8">
 
 # Repl-uptime
 
 🤙 Don't let your repl go to sleep! Create a http server with just one line of code and keep pinging it!
-<br><br><br>
+
+[![GitHub License](https://img.shields.io/github/license/igorkowalczyk/repl-uptime?color=%23F26207&logo=github&style=flat-square&label=License)](https://github.com/igorkowalczyk/repl-uptime/blob/main/license.md)
+[![NPM Version](https://img.shields.io/npm/v/%40igorkowalczyk%2Frepl-uptime/latest.svg?logo=npm&logoColor=fff&style=flat-square&color=%23F26207)](https://npmjs.com/package/@igorkowalczyk/repl-uptime)
+[![NPM Downloads](https://img.shields.io/npm/dw/@igorkowalczyk/repl-uptime?logo=npm&logoColor=fff&style=flat-square&color=%23F26207&label=Downloads)](https://npmjs.com/package/@igorkowalczyk/repl-uptime)
 
 ---
 
@@ -77,3 +80,7 @@ When submitting a pull request:
 ## 📋 License
 
 This project is licensed under the MIT. See the [LICENSE](https://github.com/igorkowalczyk/repl-uptime/blob/master/license.md) file for details
+
+---
+
+<sub>This package is an independent project and is not affiliated, endorsed, or associated with <a href="https://replit.com">Replit</a> in any way.</sub>
