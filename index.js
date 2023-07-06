@@ -1,8 +1,6 @@
-"use strict";
+import { createServer } from "node:http";
 
-const { createServer } = require("node:http");
-
-function config(options = {}) {
+export function config(options = {}) {
  let port = options.port || 8080;
  let customURL = options.path ? options.path.toString() : "/";
  let customResponse = options.message ? options.message.toString() : "200 OK!";
@@ -18,5 +16,3 @@ function config(options = {}) {
   if (options.debug) console.log(`::debug:: [repl-uptime] => Server listening on port ${port}`);
  });
 }
-
-module.exports = { config };

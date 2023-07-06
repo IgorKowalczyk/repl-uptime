@@ -4,4 +4,8 @@ module.exports = {
   browser: true,
   node: true,
  },
+ parserOptions: {
+  ecmaVersion: "latest",
+  sourceType: "module",
+ },
 };
