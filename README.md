@@ -29,13 +29,32 @@ pnpm add @igorkowalczyk/repl-uptime
 **No Config**
 
 ```javascript
+/// CommonJS
 require("@igorkowalczyk/repl-uptime").config();
+```
+
+```javascript
+/// ES6
+import { config } from "@igorkowalczyk/repl-uptime";
+config();
 ```
 
 **With Config**
 
 ```javascript
+/// CommonJS
 require("@igorkowalczyk/repl-uptime").config({
+ port: 8080,
+ path: "/",
+ message: "🤙 Don't let your repl go to sleep!",
+ debug: true,
+});
+```
+
+```javascript
+/// ES6
+import { config } from "@igorkowalczyk/repl-uptime";
+config({
  port: 8080,
  path: "/",
  message: "🤙 Don't let your repl go to sleep!",
