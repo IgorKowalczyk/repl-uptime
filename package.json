@@ -9,8 +9,8 @@
   },
   "scripts": {
     "build": "rollup -c",
-    "format:check": "prettier --check --cache .",
-    "format": "prettier --write . --ignore-unknown --cache",
+    "format:check": "prettier . --check --cache",
+    "format": "prettier . --write --ignore-unknown --cache",
     "lint": "eslint . --ext .js,.ts",
     "lint:fix": "eslint . --ext .js,.ts --fix"
   },
