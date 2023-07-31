@@ -1,7 +1,12 @@
 {
   "name": "@igorkowalczyk/repl-uptime",
-  "version": "1.5.0",
   "description": "🤙 Don't let your repl go to sleep! Create a http server with just few lines of code and keep pinging it!",
+  "version": "1.5.0",
+  "author": "Igor Kowalczyk",
+  "license": "MIT",
+  "repository": "IgorKowalczyk/repl-uptime",
+  "bugs": "https://github.com/igorkowalczyk/repl-uptime/issues",
+  "homepage": "https://github.com/IgorKowalczyk/repl-uptime#readme",
   "type": "module",
   "exports": {
     "import": "./dist/mjs/index.js",
@@ -24,24 +29,16 @@
     "rollup": "3.27.0",
     "supertest": "6.3.3"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/IgorKowalczyk/repl-uptime.git"
-  },
-  "bugs": {
-    "url": "https://github.com/IgorKowalczyk/repl-uptime/issues"
-  },
-  "homepage": "https://github.com/IgorKowalczyk/repl-uptime#readme",
   "files": [
     "README.md",
     "dist"
   ],
-  "author": "Igor Kowalczyk",
-  "license": "MIT",
   "keywords": [
     "replit",
     "repl",
-    "express",
+    "uptime",
+    "ping",
+    "http",
     "api",
     "server",
     "uptime"

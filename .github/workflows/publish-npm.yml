@@ -34,6 +34,6 @@ jobs:
    - name: 🚀 Test package
      run: pnpm test
    - name: 🚀 Publish package
-     run: pnpm publish --access public --publish-branch ${{ github.head_ref }} --no-git-checks
+     run: pnpm publish --access public --publish-branch ${{ github.head_ref }} --no-git-checks --provenance
      env:
       NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
