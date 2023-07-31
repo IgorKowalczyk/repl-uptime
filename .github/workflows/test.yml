@@ -1,0 +1,33 @@
+name: Test package
+
+on:
+ push:
+  branches: [main]
+ pull_request:
+  branches: [main]
+
+jobs:
+ test:
+  name: Test package
+  runs-on: ["ubuntu-latest", "macos-latest"]
+  strategy:
+   fail-fast: false
+   matrix:
+    language: ["javascript"]
+    node: ["16.x", "18.x"]
+  steps:
+   - name: 🧱 Checkout repository
+     uses: actions/checkout@v3
+   - name: 🔩 Setup PNPM
+     uses: pnpm/action-setup@v2
+     with:
+      version: latest
+   - name: 🔩 Setup Node ${{ matrix.node }}
+     uses: actions/setup-node@v3
+     with:
+      node-version: ${{ matrix.node }}
+      cache: "pnpm"
+   - name: 📥 Install dependencies
+     run: pnpm install
+   - name: 🚀 Run tests (Node ${{matrix.node}})
+     run: "pnpm run test"

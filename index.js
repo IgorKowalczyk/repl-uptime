@@ -1,5 +1,12 @@
 import { createServer } from "node:http";
 
+/**
+ * @param {object} options
+ * @param {number} options.port Port to listen on
+ * @param {string} options.path Path to respond to
+ * @param {string} options.message Response message
+ * @param {boolean} options.debug Enable debug logging
+ */
 export function config(options = {}) {
  let port = options.port || 8080;
  let customURL = options.path ? options.path.toString() : "/";
