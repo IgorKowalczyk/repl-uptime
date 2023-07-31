@@ -2,7 +2,7 @@
 
 # Repl-uptime
 
-🤙 Don't let your repl go to sleep! Create a http server with just one line of code and keep pinging it!
+🤙 Don't let your repl go to sleep! Create a http server with just few lines of code and keep pinging it!
 
 [![GitHub License](https://img.shields.io/github/license/igorkowalczyk/repl-uptime?color=%23F26207&logo=github&style=flat-square&label=License)](https://github.com/igorkowalczyk/repl-uptime/blob/main/license.md)
 [![NPM Version](https://img.shields.io/npm/v/%40igorkowalczyk%2Frepl-uptime/latest.svg?logo=npm&logoColor=fff&style=flat-square&color=%23F26207)](https://npmjs.com/package/@igorkowalczyk/repl-uptime)
@@ -12,7 +12,7 @@
 
 ## 📥 Installation
 
-**Node.js v7.7.3 or newer is required**.
+**Node.js v12.0.0 or newer is required.**
 
 ```
 npm install @igorkowalczyk/repl-uptime
@@ -22,31 +22,41 @@ pnpm add @igorkowalczyk/repl-uptime
 
 ## ✨ Features
 
-- No dependencies
-- No required configuration
-- Easy to use (just one line of code)
-- Blazing fast!
+- **No dependencies** (just Node.js)
+- **No required configuration** (but you can customize it)
+- **Easy to use** (just few lines of code)
+- **Blazing fast!** (it's just a http server)
+- **Works with any JavaScript project** that have to run 24/7 (discord bots, web servers, etc.)
 
 ## 📦 Examples
 
 **No Config**
 
 ```javascript
-/// CommonJS
-require("@igorkowalczyk/repl-uptime").config();
-```
-
-```javascript
 /// ES6
-import { config } from "@igorkowalczyk/repl-uptime";
-config();
+import Server from "@igorkowalczyk/repl-uptime";
+new Server();
+
+/// CommonJS
+const Server = require("@igorkowalczyk/repl-uptime");
+new Server();
 ```
 
 **With Config**
 
 ```javascript
+/// ES6
+import Server from "@igorkowalczyk/repl-uptime";
+new Server({
+ port: 8080,
+ path: "/",
+ message: "🤙 Don't let your repl go to sleep!",
+ debug: true,
+});
+
 /// CommonJS
-require("@igorkowalczyk/repl-uptime").config({
+const Server = require("@igorkowalczyk/repl-uptime");
+new Server({
  port: 8080,
  path: "/",
  message: "🤙 Don't let your repl go to sleep!",
@@ -54,16 +64,26 @@ require("@igorkowalczyk/repl-uptime").config({
 });
 ```
 
-```javascript
-/// ES6
-import { config } from "@igorkowalczyk/repl-uptime";
-config({
- port: 8080,
- path: "/",
- message: "🤙 Don't let your repl go to sleep!",
- debug: true,
-});
-```
+**Then just run your project and go to [uptimerobot.com](https://uptimerobot.com) or [hetrixtools.com](https://hetrixtools.com) and create a new monitor with your repl url. That's it! 🎉**
+
+## 📖 Available Options
+
+### Options
+
+| Option  | Type    | Default Value | Description                                                                                                 |
+| ------- | ------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
+| port    | Number  | 8080          | The port number on which the server will listen for incoming requests.                                      |
+| path    | String  | "/"           | The custom URL path to be used for handling incoming requests.                                              |
+| message | String  | "200 OK!"     | The custom response message that will be sent back to clients when the request is successfully handled.     |
+| debug   | Boolean | false         | If set to `true`, enables debugging mode, which may log additional information about the server's behavior. |
+
+### Functions
+
+| Function             | Description                                                                                                                                                                                                                                                   |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| constructor(options) | Initializes the server with the provided options and starts listening on the specified port.                                                                                                                                                                  |
+| listen()             | Starts the server to listen for incoming requests on the specified port. Returns a promise that resolves when the server starts listening successfully. If an error occurs, the promise is rejected. The function is called automatically by the constructor. |
+| stop()               | Stops the server and closes the underlying HTTP server instance. Returns a promise that resolves when the server is successfully closed. If an error occurs, the promise is rejected.                                                                         |
 
 ## ⁉️ Issues
 

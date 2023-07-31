@@ -31,6 +31,8 @@ jobs:
      run: pnpm install
    - name: 🚀 Build package
      run: pnpm build
+   - name: 🚀 Test package
+     run: pnpm test
    - name: 🚀 Publish package
      run: pnpm publish --access public --publish-branch ${{ github.head_ref }} --no-git-checks
      env:

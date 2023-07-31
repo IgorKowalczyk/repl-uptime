@@ -1,7 +1,7 @@
 {
   "name": "@igorkowalczyk/repl-uptime",
-  "version": "1.4.0",
-  "description": "🤙 Don't let your repl go to sleep! Create a http server with just one line of code and keep pinging it! ",
+  "version": "1.5.0",
+  "description": "🤙 Don't let your repl go to sleep! Create a http server with just few lines of code and keep pinging it!",
   "type": "module",
   "exports": {
     "import": "./dist/mjs/index.js",

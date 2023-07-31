@@ -8,14 +8,13 @@ on:
 
 jobs:
  test:
-  name: Test package (Node ${{ matrix.node }}) on ${{ matrix.os }}
-  runs-on: ${{ matrix.os }}
+  name: Test package (Node ${{ matrix.node }})
+  runs-on: "ubuntu-latest"
   strategy:
    fail-fast: false
    matrix:
     language: ["javascript"]
-    os: ["ubuntu-latest"]
-    node: ["16.x", "18.x"]
+    node: ["16.x", "18.x", "20.x"]
   steps:
    - name: 🧱 Checkout repository
      uses: actions/checkout@v3
