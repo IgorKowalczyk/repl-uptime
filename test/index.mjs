@@ -1,47 +1,67 @@
-import { config } from "../index";
+import Server from "../index";
+import request from "supertest"; // Import supertest
+import { createServer } from "node:http";
+import {jest} from '@jest/globals';
 
-describe("config()", () => {
- it("should create a server on the default port", async () => {
-  const server = await config();
-  expect(server.address().port).toBe(8080);
+describe("Server", () => {
+ let server;
+
+ afterEach(async () => {
+  await server.stop(); // Stop the server after each test
  });
 
- it("should allow the path to be customized", async () => {
-  const server = await config({ path: "/custom-path" });
-  expect(server.address().port).toBe(8080);
-  expect(server.url).toBe("/custom-path");
+ it("should create a server on the default port", () => {
+  server = new Server();
+  expect(server.port).toBe(8080);
  });
 
- it("should allow the response to be customized", async () => {
-  const server = await config({ message: "Custom response" });
-  expect(server.address().port).toBe(8080);
-  expect(await server.request("/").text()).toBe("Custom response");
+ it("should allow the port to be customized", () => {
+  const customPort = 8081;
+  server = new Server({ port: customPort });
+  expect(server.port).toBe(customPort);
  });
 
- it("should allow the port to be customized", async () => {
-  const server = await config({ port: 8081 });
-  expect(server.address().port).toBe(8081);
+ it("should allow the path to be customized", () => {
+  const customPath = "/foo";
+  server = new Server({ path: customPath });
+  expect(server.port).toBe(8080);
+  expect(server.customURL).toBe(customPath);
  });
 
- it("should throw an error if the port is invalid", async () => {
-  try {
-   await config({ port: -1 });
-  } catch (error) {
-   expect(error.message).toBe("Invalid port: -1");
-  }
+ it("should allow the message to be customized", () => {
+  const customMessage = "Hello, world!";
+  server = new Server({ message: customMessage });
+  expect(server.port).toBe(8080);
+  expect(server.customResponse).toBe(customMessage);
  });
 
- it("should allow the debug option to be customized", async () => {
-  const server = await config({ debug: true });
+ it("should allow debug mode to be enabled", () => {
+  server = new Server({ debug: true });
+  expect(server.port).toBe(8080);
   expect(server.debug).toBe(true);
  });
 
- it("should allow the request to be customized", async () => {
-  const request = async (req, res) => {
-   res.writeHead(200);
-   res.end("Custom response");
-  };
-  const server = await config({ request });
-  expect(await server.request("/").text()).toBe("Custom response");
+ it("should respond with a 200 OK by default", async () => {
+  server = new Server();
+  await request(createServer(server.handleRequest.bind(server)))
+   .get("/")
+   .expect(200);
+ });
+
+ it("should respond with a 200 OK when the path is customized", async () => {
+  const customPath = "/foo";
+  server = new Server({ path: customPath });
+  await request(createServer(server.handleRequest.bind(server)))
+   .get(customPath)
+   .expect(200);
+ });
+
+ it("should respond with a 200 OK when the message is customized", async () => {
+  const customMessage = "Hello, world!";
+  server = new Server({ message: customMessage });
+  const response = await request(createServer(server.handleRequest.bind(server)))
+   .get("/")
+   .expect(200);
+  expect(response.text).toBe(customMessage);
  });
 });

@@ -1,25 +1,55 @@
 import { createServer } from "node:http";
 
-/**
- * @param {object} options
- * @param {number} options.port Port to listen on
- * @param {string} options.path Path to respond to
- * @param {string} options.message Response message
- * @param {boolean} options.debug Enable debug logging
- */
-export function config(options = {}) {
- let port = options.port || 8080;
- let customURL = options.path ? options.path.toString() : "/";
- let customResponse = options.message ? options.message.toString() : "200 OK!";
- const request = async (req, res) => {
-  if (options.debug) console.log(`::debug:: [repl-uptime] => ${req.method.toLowerCase()} ${req.url}`);
-  if (req.url === customURL) {
+class Server {
+ /**
+  * @param {object} options
+  * @param {number} options.port - The port to listen on
+  * @param {string} options.path - The path to respond to
+  * @param {string} options.message - The message to respond with
+  * @param {boolean} options.debug - Whether to log debug messages
+  * @returns {Server}
+  */
+ constructor(options = {}) {
+  this.port = options.port || 8080;
+  this.customURL = options.path ? options.path.toString() : "/";
+  this.customResponse = options.message ? options.message.toString() : "200 OK!";
+  this.debug = options.debug || false;
+  this.server = createServer(this.handleRequest.bind(this));
+  this.listen(); // Start listening immediately
+ }
+
+ handleRequest(req, res) {
+  if (this.debug) console.log(`::debug:: [repl-uptime] => ${req.method.toLowerCase()} ${req.url}`);
+  if (req.url === this.customURL) {
    res.writeHead(200);
-   return res.end(customResponse);
+   return res.end(this.customResponse);
   }
- };
- const server = createServer(request);
- server.listen(port, () => {
-  if (options.debug) console.log(`::debug:: [repl-uptime] => Server listening on port ${port}`);
- });
+ }
+
+ listen() {
+  return new Promise((resolve, reject) => {
+   this.server.on("error", (error) => {
+    reject(error);
+   });
+
+   this.server.listen(this.port, () => {
+    if (this.debug) console.log(`::debug:: [repl-uptime] => Server listening on port ${this.port}`);
+    resolve();
+   });
+  });
+ }
+
+ stop() {
+  return new Promise((resolve, reject) => {
+   this.server.close((error) => {
+    if (error) {
+     reject(error);
+    } else {
+     resolve();
+    }
+   });
+  });
+ }
 }
+
+export default Server;
