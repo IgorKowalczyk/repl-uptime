@@ -1,12 +1,16 @@
-<img width="170" height="170" align="left" style="float: left; margin: 0 10px 0 0; border-radius: 50%;" alt="Replit Logo" src="https://github.com/IgorKowalczyk/repl-uptime/assets/49127376/7a63817d-1b90-4be2-a3c6-3cbee075dbf8">
+![Repl-uptime](https://github.com/IgorKowalczyk/repl-uptime/assets/49127376/bba7b12a-875d-4d71-b595-4b9a9ab0f965)
 
-# Repl-uptime
-
-🤙 Don't let your repl go to sleep! Create a http server with just few lines of code and keep pinging it!
-
-[![GitHub License](https://img.shields.io/github/license/igorkowalczyk/repl-uptime?color=%23F26207&logo=github&style=flat-square&label=License)](https://github.com/igorkowalczyk/repl-uptime/blob/main/license.md)
-[![NPM Version](https://img.shields.io/npm/v/%40igorkowalczyk%2Frepl-uptime/latest.svg?logo=npm&logoColor=fff&style=flat-square&color=%23F26207)](https://npmjs.com/package/@igorkowalczyk/repl-uptime)
-[![NPM Downloads](https://img.shields.io/npm/dw/@igorkowalczyk/repl-uptime?logo=npm&logoColor=fff&style=flat-square&color=%23F26207&label=Downloads)](https://npmjs.com/package/@igorkowalczyk/repl-uptime)
+<div align="center">
+  <a aria-label="GitHub License" href="https://github.com/igorkowalczyk/repl-uptime/blob/main/license.md">
+    <img src="https://img.shields.io/github/license/igorkowalczyk/repl-uptime?color=%23F26207&logo=github&style=flat-square&label=License">
+  </a>
+  <a aria-label="NPM Version" href="https://npmjs.com/package/@igorkowalczyk/repl-uptime">
+    <img src="https://img.shields.io/npm/v/%40igorkowalczyk%2Frepl-uptime/latest.svg?logo=npm&logoColor=fff&style=flat-square&color=%23F26207&label=Version">
+  </a>
+  <a aria-label="NPM Downloads" href="https://npmjs.com/package/@igorkowalczyk/repl-uptime">
+    <img src="https://img.shields.io/npm/dw/%40igorkowalczyk%2Frepl-uptime?logo=npm&logoColor=fff&style=flat-square&color=%23F26207&label=Downloads">
+  </a>
+</div>
 
 ---
 
@@ -70,20 +74,20 @@ new Server({
 
 ### Options
 
-| Option  | Type    | Default Value | Description                                                                                                 |
-| ------- | ------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
-| port    | Number  | 8080          | The port number on which the server will listen for incoming requests.                                      |
-| path    | String  | "/"           | The custom URL path to be used for handling incoming requests.                                              |
-| message | String  | "200 OK!"     | The custom response message that will be sent back to clients when the request is successfully handled.     |
-| debug   | Boolean | false         | If set to `true`, enables debugging mode, which may log additional information about the server's behavior. |
+| Option    | Type      | Default Value | Description                                                                                                 |
+| --------- | --------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
+| `port`    | `Number`  | `8080`        | The port number on which the server will listen for incoming requests.                                      |
+| `path`    | `String`  | `/`           | The custom URL path to be used for handling incoming requests.                                              |
+| `message` | `String`  | `200 OK!`     | The custom response message that will be sent back to clients when the request is successfully handled.     |
+| `debug`   | `Boolean` | `false`       | If set to `true`, enables debugging mode, which may log additional information about the server's behavior. |
 
 ### Functions
 
-| Function             | Description                                                                                                                                                                                                                                                   |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| constructor(options) | Initializes the server with the provided options and starts listening on the specified port.                                                                                                                                                                  |
-| listen()             | Starts the server to listen for incoming requests on the specified port. Returns a promise that resolves when the server starts listening successfully. If an error occurs, the promise is rejected. The function is called automatically by the constructor. |
-| stop()               | Stops the server and closes the underlying HTTP server instance. Returns a promise that resolves when the server is successfully closed. If an error occurs, the promise is rejected.                                                                         |
+| Function               | Description                                                                                                                                                                                                                                                   |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `constructor(options)` | Initializes the server with the provided options and starts listening on the specified port.                                                                                                                                                                  |
+| `listen()`             | Starts the server to listen for incoming requests on the specified port. Returns a promise that resolves when the server starts listening successfully. If an error occurs, the promise is rejected. The function is called automatically by the constructor. |
+| `stop()`               | Stops the server and closes the underlying HTTP server instance. Returns a promise that resolves when the server is successfully closed. If an error occurs, the promise is rejected.                                                                         |
 
 ## ⁉️ Issues
 
