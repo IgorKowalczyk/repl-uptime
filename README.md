@@ -26,11 +26,11 @@ pnpm add @igorkowalczyk/repl-uptime
 
 ## ✨ Features
 
-- **No dependencies** (just Node.js)
-- **No required configuration** (but you can customize it)
-- **Easy to use** (just few lines of code)
-- **Blazing fast!** (it's just a http server)
-- **Works with any JavaScript project** that have to run 24/7 (discord bots, web servers, etc.)
+- 🚀 **No dependencies**: Just Node.js.
+- ⚙️ **Zero configuration**: Ready out of the box.
+- 🎈 **User-friendly**: Minimal code required.
+- ⏩ **Blazing speed**: Lightning-fast HTTP server.
+- 🌐 **Versatile**: Perfect for any 24/7 JavaScript project.
 
 ## 📦 Examples
 
