@@ -18,6 +18,12 @@ class Server {
   this.listen(); // Start listening immediately
  }
 
+ /**
+  * @param {http.IncomingMessage} req - The request object
+  * @param {http.ServerResponse} res - The response object
+  * @returns {void}
+  * @private
+  */
  handleRequest(req, res) {
   if (this.debug) console.log(`::debug:: [repl-uptime] => ${req.method.toLowerCase()} ${req.url}`);
   if (req.url === this.customURL) {
@@ -26,6 +32,10 @@ class Server {
   }
  }
 
+ /**
+  * Starts the server listening on the specified port
+  * @returns {Promise<void>}
+  */
  listen() {
   return new Promise((resolve, reject) => {
    this.server.on("error", (error) => {
@@ -39,6 +49,10 @@ class Server {
   });
  }
 
+ /**
+  * Stops the server
+  * @returns {Promise<void>}
+  */
  stop() {
   return new Promise((resolve, reject) => {
    this.server.close((error) => {
