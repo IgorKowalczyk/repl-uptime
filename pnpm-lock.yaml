@@ -21,11 +21,11 @@ devDependencies:
     specifier: 3.0.3
     version: 3.0.3
   rollup:
-    specifier: 3.29.3
-    version: 3.29.3
+    specifier: 3.29.4
+    version: 3.29.4
   rollup-plugin-uglify:
     specifier: 6.0.4
-    version: 6.0.4(rollup@3.29.3)
+    version: 6.0.4(rollup@3.29.4)
   supertest:
     specifier: 6.3.3
     version: 6.3.3
@@ -3181,20 +3181,20 @@ packages:
       glob: 7.2.3
     dev: true
 
-  /rollup-plugin-uglify@6.0.4(rollup@3.29.3):
+  /rollup-plugin-uglify@6.0.4(rollup@3.29.4):
     resolution: {integrity: sha512-ddgqkH02klveu34TF0JqygPwZnsbhHVI6t8+hGTcYHngPkQb5MIHI0XiztXIN/d6V9j+efwHAqEL7LspSxQXGw==}
     peerDependencies:
       rollup: '>=0.66.0 <2'
     dependencies:
       '@babel/code-frame': 7.22.5
       jest-worker: 24.9.0
-      rollup: 3.29.3
+      rollup: 3.29.4
       serialize-javascript: 2.1.2
       uglify-js: 3.17.4
     dev: true
 
-  /rollup@3.29.3:
-    resolution: {integrity: sha512-T7du6Hum8jOkSWetjRgbwpM6Sy0nECYrYRSmZjayFcOddtKJWU4d17AC3HNUk7HRuqy4p+G7aEZclSHytqUmEg==}
+  /rollup@3.29.4:
+    resolution: {integrity: sha512-oWzmBZwvYrU0iJHtDmhsm662rC15FRXmcjCk1xD771dFDx5jJ02ufAQQTn0etB2emNk4J9EZg/yWKpsn9BWGRw==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
     hasBin: true
     optionalDependencies:
