@@ -22,7 +22,7 @@
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
   },
   "devDependencies": {
-    "@igorkowalczyk/eslint-config": "2.0.2",
+    "@igorkowalczyk/eslint-config": "2.0.3",
     "@igorkowalczyk/prettier-config": "2.0.2",
     "eslint": "8.52.0",
     "eslint-plugin-jest": "27.4.3",
