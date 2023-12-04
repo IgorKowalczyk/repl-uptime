@@ -2,14 +2,12 @@ import eslintConfig from "@igorkowalczyk/eslint-config/flat";
 import jestPlugin from "eslint-plugin-jest";
 
 export default [
+ ...eslintConfig,
  {
-  files: ["*.js"],
-  ignores: ["test/**/*.mjs"],
-  ...eslintConfig,
+  ignores: ["dist/**", "test/**"],
  },
  {
   files: ["test/**/*.mjs"],
-  ...eslintConfig,
   plugins: {
    jest: jestPlugin,
   },

@@ -1,7 +1,6 @@
-import Server from "../index";
-import request from "supertest"; // Import supertest
+import request from "supertest";
 import { createServer } from "node:http";
-// import { jest } from "@jest/globals";
+import Server from "../index";
 
 describe("Server", () => {
  let server;
