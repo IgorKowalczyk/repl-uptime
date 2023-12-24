@@ -46,7 +46,9 @@ const Server = require("@igorkowalczyk/repl-uptime");
 new Server();
 ```
 
-**With Config**
+**That's it!** 🎉 Your repl is now ready to be pinged. You can use [uptimerobot.com](https://uptimerobot.com) or [hetrixtools.com](https://hetrixtools.com) to ping your repl.
+
+**With Config (Advanced)**
 
 ```javascript
 /// ES6
@@ -68,18 +70,16 @@ new Server({
 });
 ```
 
-**Then just run your project and go to [uptimerobot.com](https://uptimerobot.com) or [hetrixtools.com](https://hetrixtools.com) and create a new monitor with your repl url. That's it! 🎉**
-
-## 📖 Available Options
+## 📚 Documentation
 
 ### 🔧 Properties
 
-| Option    | Type      | Default   | Description                                                                                                 |
-| --------- | --------- | --------- | ----------------------------------------------------------------------------------------------------------- |
-| `port`    | `Number`  | `8080`    | The port number on which the server will listen for incoming requests.                                      |
-| `path`    | `String`  | `/`       | The custom URL path to be used for handling incoming requests.                                              |
-| `message` | `String`  | `200 OK!` | The custom response message that will be sent back to clients when the request is successfully handled.     |
-| `debug`   | `Boolean` | `false`   | If set to `true`, enables debugging mode, which may log additional information about the server's behavior. |
+| Option    | Type      | Default   | Description                                                                                                                        |
+| --------- | --------- | --------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| `port`    | `Number`  | `8080`    | The port number on which the server will listen for incoming requests.                                                             |
+| `path`    | `String`  | `/`       | The custom URL path to be used for handling incoming requests.                                                                     |
+| `message` | `String`  | `200 OK!` | The custom response message that will be sent back to clients when the request is successfully handled. Can be HTML or plain text. |
+| `debug`   | `Boolean` | `false`   | If set to `true`, enables debugging mode, which may log additional information about the server's behavior.                        |
 
 ### 📜 Functions
 
