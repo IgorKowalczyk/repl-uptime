@@ -72,16 +72,16 @@ new Server({
 
 ## 📖 Available Options
 
-### Options
+### 🔧 Properties
 
-| Option    | Type      | Default Value | Description                                                                                                 |
-| --------- | --------- | ------------- | ----------------------------------------------------------------------------------------------------------- |
-| `port`    | `Number`  | `8080`        | The port number on which the server will listen for incoming requests.                                      |
-| `path`    | `String`  | `/`           | The custom URL path to be used for handling incoming requests.                                              |
-| `message` | `String`  | `200 OK!`     | The custom response message that will be sent back to clients when the request is successfully handled.     |
-| `debug`   | `Boolean` | `false`       | If set to `true`, enables debugging mode, which may log additional information about the server's behavior. |
+| Option    | Type      | Default   | Description                                                                                                 |
+| --------- | --------- | --------- | ----------------------------------------------------------------------------------------------------------- |
+| `port`    | `Number`  | `8080`    | The port number on which the server will listen for incoming requests.                                      |
+| `path`    | `String`  | `/`       | The custom URL path to be used for handling incoming requests.                                              |
+| `message` | `String`  | `200 OK!` | The custom response message that will be sent back to clients when the request is successfully handled.     |
+| `debug`   | `Boolean` | `false`   | If set to `true`, enables debugging mode, which may log additional information about the server's behavior. |
 
-### Functions
+### 📜 Functions
 
 | Function               | Description                                                                                                                                                                                                                                                   |
 | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
