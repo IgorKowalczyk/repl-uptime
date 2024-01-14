@@ -30,7 +30,7 @@
     "prettier": "3.2.2",
     "rollup": "4.9.4",
     "rollup-plugin-uglify": "6.0.4",
-    "supertest": "6.3.3"
+    "supertest": "6.3.4"
   },
   "files": [
     "README.md",
