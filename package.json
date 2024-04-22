@@ -45,6 +45,5 @@
     "api",
     "server",
     "uptime"
-  ],
-  "packageManager": "pnpm@9.0.4"
+  ]
 }
