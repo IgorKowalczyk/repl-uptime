@@ -91,15 +91,16 @@ new Server({
 
 ## ⁉️ Issues
 
-If you have any issues with the page please create [new issue here](https://github.com/igorkowalczyk/repl-uptime/issues)
+If you come across any errors or have suggestions for improvements, please create a [new issue here](https://github.com/igorkowalczyk/repl-uptime/issues) and describe it clearly.
 
 ## 📥 Pull Requests
 
-When submitting a pull request:
+When submitting a pull request, please follow these steps:
 
-- Clone the repo.
-- Create a branch off of master and give it a meaningful name (e.g. my-awesome-new-feature).
-- Open a [pull request](https://github.com/igorkowalczyk/repl-uptime/pulls) on [GitHub](https://github.com) and describe the feature or fix.
+- Clone [this repository](https://github.com/igorkowalczyk/repl-uptime) `https://github.com/IgorKowalczyk/repl-uptime.git`
+- Create a branch from `main` and give it a meaningful name (e.g. `my-awesome-new-feature`).
+- Open a [pull request](https://github.com/igorkowalczyk/repl-uptime/pulls) on [GitHub](https://github.com/) and clearly describe the feature or fix you are proposing.
+
 
 ## 📋 License
 
