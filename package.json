@@ -25,7 +25,7 @@
     "@igorkowalczyk/eslint-config": "2.2.0",
     "@igorkowalczyk/prettier-config": "2.2.0",
     "eslint": "9.9.1",
-    "eslint-plugin-jest": "28.8.2",
+    "eslint-plugin-jest": "28.8.3",
     "jest": "29.7.0",
     "prettier": "3.3.3",
     "rollup": "4.21.2",
