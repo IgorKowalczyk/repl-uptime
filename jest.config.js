@@ -1,6 +1,7 @@
-const config = {
- testEnvironment: "node",
- testMatch: ["**/test/**/*.mjs"],
-};
+/** @type {import('ts-jest').JestConfigWithTsJest} */
 
-export default config;
+export default {
+ preset: "ts-jest",
+ testEnvironment: "node",
+ testMatch: ["**/test/**/*.ts"],
+};

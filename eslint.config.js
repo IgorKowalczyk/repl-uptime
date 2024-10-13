@@ -1,8 +1,10 @@
-import eslintConfig from "@igorkowalczyk/eslint-config/flat";
+import eslintConfig from "@igorkowalczyk/eslint-config";
 import jestPlugin from "eslint-plugin-jest";
 
 export default [
- ...eslintConfig,
+ ...eslintConfig.base,
+ ...eslintConfig.node,
+ ...eslintConfig.typescript,
  {
   ignores: ["dist/**", "test/**"],
  },

@@ -18,19 +18,11 @@
 
 **Node.js v12.0.0 or newer is required.**
 
-```
+```sh
 npm install @igorkowalczyk/repl-uptime
 yarn add @igorkowalczyk/repl-uptime
 pnpm add @igorkowalczyk/repl-uptime
 ```
-
-## ✨ Features
-
-- 🚀 **No dependencies**: Just Node.js.
-- ⚙️ **Zero configuration**: Ready out of the box.
-- 🎈 **User-friendly**: Minimal code required.
-- ⏩ **Blazing speed**: Lightning-fast HTTP server.
-- 🌐 **Versatile**: Perfect for any 24/7 JavaScript project.
 
 ## 📦 Examples
 
@@ -62,6 +54,7 @@ new Server({
 
 /// CommonJS
 const Server = require("@igorkowalczyk/repl-uptime");
+
 new Server({
  port: 8080,
  path: "/",
@@ -103,7 +96,7 @@ When submitting a pull request, please follow these steps:
 
 ## 📋 License
 
-This project is licensed under the MIT. See the [LICENSE](https://github.com/igorkowalczyk/repl-uptime/blob/master/license.md) file for details
+This project is licensed under the MIT. See the [LICENSE](https://github.com/igorkowalczyk/repl-uptime/blob/main/license.md) file for details
 
 ---
 

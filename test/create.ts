@@ -3,10 +3,10 @@ import { createServer } from "node:http";
 import Server from "../index";
 
 describe("Server", () => {
- let server;
+ let server: Server;
 
  afterEach(async () => {
-  await server.stop(); // Stop the server after each test
+  await server.stop();
  });
 
  it("should create a server on the default port", () => {
@@ -62,5 +62,22 @@ describe("Server", () => {
    .get("/")
    .expect(200);
   expect(response.text).toBe(customMessage);
+ });
+
+ it("should log requests when debug mode is enabled", async () => {
+  server = new Server({ debug: true });
+  const consoleSpy = jest.spyOn(console, "log");
+  await request(createServer(server.handleRequest.bind(server)))
+   .get("/")
+   .expect(200);
+  expect(consoleSpy).toHaveBeenCalledWith("Request received: /");
+  consoleSpy.mockRestore();
+ });
+
+ it("should respond with a 404 Not Found for unknown paths", async () => {
+  server = new Server();
+  await request(createServer(server.handleRequest.bind(server)))
+   .get("/unknown")
+   .expect(404);
  });
 });
