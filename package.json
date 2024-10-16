@@ -26,7 +26,7 @@
     "@igorkowalczyk/eslint-config": "3.0.0-beta.11",
     "@igorkowalczyk/prettier-config": "3.0.0-beta.11",
     "@rollup/plugin-node-resolve": "15.3.0",
-    "@rollup/plugin-typescript": "12.1.0",
+    "@rollup/plugin-typescript": "12.1.1",
     "@types/jest": "29.5.13",
     "@types/node": "22.7.5",
     "@types/supertest": "6.0.2",
