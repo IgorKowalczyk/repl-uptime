@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@igorkowalczyk/eslint-config':
-        specifier: 3.0.0-beta.12
-        version: 3.0.0-beta.12(eslint@9.13.0(jiti@1.21.6))(prettier@3.3.3)(tailwindcss@3.4.13)(typescript@5.6.3)
+        specifier: 3.0.0-beta.15
+        version: 3.0.0-beta.15(eslint@9.13.0(jiti@1.21.6))(prettier@3.3.3)(tailwindcss@3.4.13)(typescript@5.6.3)
       '@igorkowalczyk/prettier-config':
         specifier: 3.0.0-beta.15
         version: 3.0.0-beta.15(prettier@3.3.3)(rollup@4.24.0)(tslib@2.7.0)(typescript@5.6.3)
@@ -354,8 +354,8 @@ packages:
     resolution: {integrity: sha512-JBxkERygn7Bv/GbN5Rv8Ul6LVknS+5Bp6RgDC/O8gEBU/yeH5Ui5C/OlWrTb6qct7LjjfT6Re2NxB0ln0yYybA==}
     engines: {node: '>=18.18'}
 
-  '@igorkowalczyk/eslint-config@3.0.0-beta.12':
-    resolution: {integrity: sha512-KhhFi9PWvijg+ITl5O0U7as8GrUU67C5AGkVbhRQc5koV5MHulnIm7UqG5rjOTcQBlEZd1ugF7A0Jqt7JiK/Ww==}
+  '@igorkowalczyk/eslint-config@3.0.0-beta.15':
+    resolution: {integrity: sha512-BBZpWSmSmktEWwk7wvURjdYCRVNEEkAVL35Eqdre7m0Eld8Y1uTBaA3fGbrKQiqjwWROLZa49Ac84gs5ukHuCg==}
     peerDependencies:
       eslint: ^9
 
@@ -3253,7 +3253,7 @@ snapshots:
 
   '@humanwhocodes/retry@0.3.1': {}
 
-  '@igorkowalczyk/eslint-config@3.0.0-beta.12(eslint@9.13.0(jiti@1.21.6))(prettier@3.3.3)(tailwindcss@3.4.13)(typescript@5.6.3)':
+  '@igorkowalczyk/eslint-config@3.0.0-beta.15(eslint@9.13.0(jiti@1.21.6))(prettier@3.3.3)(tailwindcss@3.4.13)(typescript@5.6.3)':
     dependencies:
       '@eslint-react/eslint-plugin': 1.15.0(eslint@9.13.0(jiti@1.21.6))(typescript@5.6.3)
       '@eslint/compat': 1.2.1(eslint@9.13.0(jiti@1.21.6))
