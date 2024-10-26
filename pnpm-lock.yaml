@@ -12,8 +12,8 @@ importers:
         specifier: 3.0.0-beta.12
         version: 3.0.0-beta.12(eslint@9.13.0(jiti@1.21.6))(prettier@3.3.3)(tailwindcss@3.4.13)(typescript@5.6.3)
       '@igorkowalczyk/prettier-config':
-        specifier: 3.0.0-beta.12
-        version: 3.0.0-beta.12(prettier@3.3.3)(rollup@4.24.0)(tslib@2.7.0)(typescript@5.6.3)
+        specifier: 3.0.0-beta.15
+        version: 3.0.0-beta.15(prettier@3.3.3)(rollup@4.24.0)(tslib@2.7.0)(typescript@5.6.3)
       '@rollup/plugin-node-resolve':
         specifier: 15.3.0
         version: 15.3.0(rollup@4.24.0)
@@ -359,8 +359,8 @@ packages:
     peerDependencies:
       eslint: ^9
 
-  '@igorkowalczyk/prettier-config@3.0.0-beta.12':
-    resolution: {integrity: sha512-aTlyxEHb1zmPlY19dywTN+Zk/AOo7RpSQrBdWpBPWjBjk/rzREaiU3v5s1Ff64Ujajv/HfsqU0TrUCTBQPjz8w==}
+  '@igorkowalczyk/prettier-config@3.0.0-beta.15':
+    resolution: {integrity: sha512-NHoP1xXFJkBffFMC19kO6zarlCHi1H60yy91zXUNZLtpLALLaPV6VciAS9GoC2rDk4UtgCm0jTHQbR9UFlkDoQ==}
     peerDependencies:
       prettier: ^3
 
@@ -3284,7 +3284,7 @@ snapshots:
       - tailwindcss
       - typescript
 
-  '@igorkowalczyk/prettier-config@3.0.0-beta.12(prettier@3.3.3)(rollup@4.24.0)(tslib@2.7.0)(typescript@5.6.3)':
+  '@igorkowalczyk/prettier-config@3.0.0-beta.15(prettier@3.3.3)(rollup@4.24.0)(tslib@2.7.0)(typescript@5.6.3)':
     dependencies:
       '@rollup/plugin-commonjs': 28.0.1(rollup@4.24.0)
       '@rollup/plugin-typescript': 12.1.1(rollup@4.24.0)(tslib@2.7.0)(typescript@5.6.3)
