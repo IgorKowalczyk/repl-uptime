@@ -28,7 +28,7 @@
     "@rollup/plugin-node-resolve": "15.3.0",
     "@rollup/plugin-typescript": "12.1.1",
     "@types/jest": "29.5.14",
-    "@types/node": "22.9.0",
+    "@types/node": "22.9.1",
     "@types/supertest": "6.0.2",
     "@typescript-eslint/eslint-plugin": "8.15.0",
     "@typescript-eslint/parser": "8.15.0",
