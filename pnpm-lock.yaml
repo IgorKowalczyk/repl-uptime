@@ -12,8 +12,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1(eslint@9.18.0(jiti@1.21.6))(prettier@3.4.2)(tailwindcss@3.4.13)(typescript@5.7.3)
       '@igorkowalczyk/prettier-config':
-        specifier: 3.0.0-beta.16
-        version: 3.0.0-beta.16(prettier@3.4.2)(rollup@4.30.1)(tslib@2.7.0)(typescript@5.7.3)
+        specifier: 3.0.1
+        version: 3.0.1(prettier@3.4.2)(rollup@4.30.1)(tslib@2.7.0)(typescript@5.7.3)
       '@rollup/plugin-node-resolve':
         specifier: 16.0.0
         version: 16.0.0(rollup@4.30.1)
@@ -370,8 +370,8 @@ packages:
     peerDependencies:
       eslint: ^9
 
-  '@igorkowalczyk/prettier-config@3.0.0-beta.16':
-    resolution: {integrity: sha512-z4qNrLTbkXXOpOQsufAoAwkaY59MJSpw8li6hEH7vG+/caSBuLm3pa3u/swA53vVa7v1rOhDDcEPZZEw/0FYBw==}
+  '@igorkowalczyk/prettier-config@3.0.1':
+    resolution: {integrity: sha512-Kdv4JyUTPTPNF1STnq9KUKIyoMkN2RmE8eePmxj889q54V+a91WCO8zqSkVolFqROdLDCpZiOcCb42o3pScI/w==}
     peerDependencies:
       prettier: ^3
 
@@ -497,8 +497,8 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@rollup/plugin-commonjs@28.0.1':
-    resolution: {integrity: sha512-+tNWdlWKbpB3WgBN7ijjYkq9X5uhjmcvyjEght4NmH5fAU++zfQzAJ6wumLS+dNcvwEZhKx2Z+skY8m7v0wGSA==}
+  '@rollup/plugin-commonjs@28.0.2':
+    resolution: {integrity: sha512-BEFI2EDqzl+vA1rl97IDRZ61AIwGH093d9nz8+dThxJNH8oSoB7MjWvPCX3dkaK1/RCJ/1v/R1XB15FuSs0fQw==}
     engines: {node: '>=16.0.0 || 14 >= 14.17'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0||^4.0.0
@@ -513,19 +513,6 @@ packages:
       rollup: ^2.78.0||^3.0.0||^4.0.0
     peerDependenciesMeta:
       rollup:
-        optional: true
-
-  '@rollup/plugin-typescript@12.1.1':
-    resolution: {integrity: sha512-t7O653DpfB5MbFrqPe/VcKFFkvRuFNp9qId3xq4Eth5xlyymzxNpye2z8Hrl0RIMuXTSr5GGcFpkdlMeacUiFQ==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^2.14.0||^3.0.0||^4.0.0
-      tslib: '*'
-      typescript: '>=3.7.0'
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-      tslib:
         optional: true
 
   '@rollup/plugin-typescript@12.1.2':
@@ -3530,10 +3517,10 @@ snapshots:
       - tailwindcss
       - typescript
 
-  '@igorkowalczyk/prettier-config@3.0.0-beta.16(prettier@3.4.2)(rollup@4.30.1)(tslib@2.7.0)(typescript@5.7.3)':
+  '@igorkowalczyk/prettier-config@3.0.1(prettier@3.4.2)(rollup@4.30.1)(tslib@2.7.0)(typescript@5.7.3)':
     dependencies:
-      '@rollup/plugin-commonjs': 28.0.1(rollup@4.30.1)
-      '@rollup/plugin-typescript': 12.1.1(rollup@4.30.1)(tslib@2.7.0)(typescript@5.7.3)
+      '@rollup/plugin-commonjs': 28.0.2(rollup@4.30.1)
+      '@rollup/plugin-typescript': 12.1.2(rollup@4.30.1)(tslib@2.7.0)(typescript@5.7.3)
       prettier: 3.4.2
     transitivePeerDependencies:
       - rollup
@@ -3761,7 +3748,7 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
-  '@rollup/plugin-commonjs@28.0.1(rollup@4.30.1)':
+  '@rollup/plugin-commonjs@28.0.2(rollup@4.30.1)':
     dependencies:
       '@rollup/pluginutils': 5.1.2(rollup@4.30.1)
       commondir: 1.0.1
@@ -3782,15 +3769,6 @@ snapshots:
       resolve: 1.22.8
     optionalDependencies:
       rollup: 4.30.1
-
-  '@rollup/plugin-typescript@12.1.1(rollup@4.30.1)(tslib@2.7.0)(typescript@5.7.3)':
-    dependencies:
-      '@rollup/pluginutils': 5.1.2(rollup@4.30.1)
-      resolve: 1.22.8
-      typescript: 5.7.3
-    optionalDependencies:
-      rollup: 4.30.1
-      tslib: 2.7.0
 
   '@rollup/plugin-typescript@12.1.2(rollup@4.30.1)(tslib@2.7.0)(typescript@5.7.3)':
     dependencies:
