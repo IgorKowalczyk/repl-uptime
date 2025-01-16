@@ -23,7 +23,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@igorkowalczyk/eslint-config": "3.0.1",
+    "@igorkowalczyk/eslint-config": "3.0.2",
     "@igorkowalczyk/prettier-config": "3.0.2",
     "@rollup/plugin-node-resolve": "16.0.0",
     "@rollup/plugin-typescript": "12.1.2",
