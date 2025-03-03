@@ -41,7 +41,7 @@
     "rollup-plugin-uglify": "6.0.4",
     "supertest": "7.0.0",
     "ts-jest": "29.2.6",
-    "typescript": "5.7.3"
+    "typescript": "5.8.2"
   },
   "files": [
     "dist"
