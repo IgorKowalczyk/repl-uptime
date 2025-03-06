@@ -1,5 +1,5 @@
-import request from "supertest";
 import { createServer } from "node:http";
+import request from "supertest";
 import Server from "../index";
 
 describe("Server", () => {

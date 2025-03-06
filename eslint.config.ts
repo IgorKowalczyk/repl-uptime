@@ -5,9 +5,7 @@ export default [
  ...eslintConfig.base,
  ...eslintConfig.node,
  ...eslintConfig.typescript,
- {
-  ignores: ["dist/**", "test/**"],
- },
+ ...eslintConfig.prettier,
  {
   files: ["test/**/*.mjs"],
   plugins: {
