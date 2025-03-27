@@ -30,7 +30,7 @@
     "@rollup/plugin-node-resolve": "16.0.1",
     "@rollup/plugin-typescript": "12.1.2",
     "@types/jest": "29.5.14",
-    "@types/node": "22.13.11",
+    "@types/node": "22.13.14",
     "@types/supertest": "6.0.2",
     "eslint": "9.23.0",
     "eslint-plugin-jest": "28.11.0",
