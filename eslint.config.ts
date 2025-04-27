@@ -1,11 +1,12 @@
 import eslintConfig from "@igorkowalczyk/eslint-config";
+import { defineConfig } from "eslint/config";
 import jestPlugin from "eslint-plugin-jest";
 
-export default [
- ...eslintConfig.base,
- ...eslintConfig.node,
- ...eslintConfig.typescript,
- ...eslintConfig.prettier,
+export default defineConfig([
+ eslintConfig.base,
+ eslintConfig.node,
+ eslintConfig.typescript,
+ eslintConfig.prettier,
  {
   files: ["test/**/*.mjs"],
   plugins: {
@@ -19,4 +20,4 @@ export default [
    "jest/valid-expect": "error",
   },
  },
-];
+]);
