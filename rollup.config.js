@@ -3,11 +3,11 @@ import typescript from "@rollup/plugin-typescript";
 import { defineConfig } from "rollup";
 
 const defaultConfig = {
- input: "index.ts",
+ input: "src/index.ts",
  plugins: [
   typescript({
    declaration: true,
-   include: ["index.ts"],
+   include: ["src/**/*.ts"],
    tsconfig: "tsconfig.json",
    outDir: "dist",
   }),
