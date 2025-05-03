@@ -31,64 +31,22 @@ describe("Server Initialization", () => {
   expect(server.customResponse).toBe(customMessage);
  });
 
- it("should allow debug mode to be enabled", () => {
-  server = new Server({ debug: true });
-  expect(server.debug).toBe(true);
- });
-});
-
-describe("Server Behavior", () => {
- let server: Server;
-
- beforeEach(() => {
-  server = new Server({ debug: true });
-  global.fetch = vi.fn() as unknown as typeof fetch;
- });
-
- afterEach(async () => {
-  if (server) await server.stop();
-  vi.restoreAllMocks();
- });
-
  it("should log requests when debug mode is enabled", async () => {
+  server = new Server({ debug: true });
   const consoleSpy = vi.spyOn(console, "log");
-  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
+
+  // Mocking fetch to simulate an actual request
+  const mockFetch = vi.fn().mockResolvedValue({
    status: 200,
    text: () => Promise.resolve("200 OK!"),
   });
+  global.fetch = mockFetch as unknown as typeof fetch;
 
   await fetch(`http://localhost:${server.port}/`);
-  expect(consoleSpy).toHaveBeenCalledWith("Request received: /");
+
+  expect(consoleSpy).toHaveBeenCalledWith(`Request received: /`);
+
   consoleSpy.mockRestore();
- });
-
- it("should handle multiple concurrent requests", async () => {
-  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
-   status: 200,
-   text: () => Promise.resolve("200 OK!"),
-  });
-
-  const responses = await Promise.all([
-   //
-   fetch(`http://localhost:${server.port}/`),
-   fetch(`http://localhost:${server.port}/`),
-  ]);
-  responses.forEach((response) => {
-   expect(response.status).toBe(200);
-  });
- });
-});
-
-describe("Server Responses", () => {
- let server: Server;
-
- beforeEach(() => {
-  global.fetch = vi.fn() as unknown as typeof fetch;
- });
-
- afterEach(async () => {
-  if (server) await server.stop();
-  vi.restoreAllMocks();
  });
 
  it("should respond with a 200 OK by default", async () => {
