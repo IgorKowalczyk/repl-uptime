@@ -1,16 +1,12 @@
-import { describe, it, expect, afterEach, vi, beforeEach } from "vitest";
+import fetch from "node-fetch";
+import { describe, it, expect, afterEach, vi } from "vitest";
 import Server from "../src/index";
 
-describe("Server Initialization", () => {
+describe("Server Integration & Initialization", () => {
  let server: Server;
-
- beforeEach(() => {
-  global.fetch = vi.fn();
- });
 
  afterEach(async () => {
   if (server) await server.stop();
-  vi.restoreAllMocks();
  });
 
  it("should create a server on the default port", () => {
@@ -19,68 +15,64 @@ describe("Server Initialization", () => {
  });
 
  it("should allow the port to be customized", () => {
-  const customPort = 8081;
+  const customPort = 12345;
   server = new Server({ port: customPort });
   expect(server.port).toBe(customPort);
  });
 
  it("should allow the path to be customized", () => {
-  const customPath = "/foo";
+  const customPath = "/custom";
   server = new Server({ path: customPath });
   expect(server.customURL).toBe(customPath);
  });
 
  it("should allow the message to be customized", () => {
-  const customMessage = "Hello, world!";
+  const customMessage = "Custom message";
   server = new Server({ message: customMessage });
   expect(server.customResponse).toBe(customMessage);
  });
 
- it("should respond with a 200 OK by default", async () => {
-  server = new Server();
-  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
-   status: 200,
-   text: () => Promise.resolve("200 OK!"),
-  });
+ it("should respond with 200 OK and default message", async () => {
+  const port = 8042;
+  server = new Server({ port });
 
-  const response = await fetch(`http://localhost:${server.port}/`);
-  expect(response.status).toBe(200);
+  const res = await fetch(`http://localhost:${port}/`);
+  const text = await res.text();
+
+  expect(res.status).toBe(200);
+  expect(text).toBe("200 OK!");
  });
 
- it("should respond with a 200 OK when the path is customized", async () => {
-  const customPath = "/foo";
-  server = new Server({ path: customPath });
-  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
-   status: 200,
-   text: () => Promise.resolve("200 OK!"),
-  });
+ it("should respond with 200 OK and custom message on custom path", async () => {
+  const path = "/hello";
+  const message = "Hello, world!";
+  server = new Server({ path, message });
 
-  const response = await fetch(`http://localhost:${server.port}${customPath}`);
-  expect(response.status).toBe(200);
+  const res = await fetch(`http://localhost:${server.port}${path}`);
+  const text = await res.text();
+
+  expect(res.status).toBe(200);
+  expect(text).toBe(message);
  });
 
- it("should respond with a 200 OK when the message is customized", async () => {
-  const customMessage = "Hello, world!";
-  server = new Server({ message: customMessage });
-  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
-   status: 200,
-   text: () => Promise.resolve(customMessage),
-  });
+ it("should respond with 404 Not Found for unknown path", async () => {
+  const port = 8042;
+  server = new Server({ port });
 
-  const response = await fetch(`http://localhost:${server.port}/`);
-  expect(response.status).toBe(200);
-  const text = await response.text();
-  expect(text).toBe(customMessage);
+  const res = await fetch(`http://localhost:${port}/not-found`);
+  const text = await res.text();
+
+  expect(res.status).toBe(404);
+  expect(text).toBe("Not Found");
  });
+ it("should log requests when debug is enabled", async () => {
+  server = new Server({ debug: true });
 
- it("should respond with a 404 Not Found for unknown paths", async () => {
-  server = new Server();
-  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
-   status: 404,
-   text: () => Promise.resolve("Not Found"),
-  });
+  const consoleSpy = vi.spyOn(console, "log").mockImplementation(() => {});
 
-  const response = await fetch(`http://localhost:${server.port}/unknown`);
-  expect(response.status).toBe(404);
+  await fetch(`http://localhost:${server.port}/`);
+
+  expect(consoleSpy).toHaveBeenCalledWith(expect.stringContaining("Request received: /"));
+  consoleSpy.mockRestore();
  });
 });
