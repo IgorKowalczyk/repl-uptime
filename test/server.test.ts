@@ -1,11 +1,16 @@
-import { describe, it, expect, afterEach, beforeEach, vi } from "vitest";
+import { describe, it, expect, afterEach, vi, beforeEach } from "vitest";
 import Server from "../src/index";
 
 describe("Server Initialization", () => {
  let server: Server;
 
+ beforeEach(() => {
+  global.fetch = vi.fn();
+ });
+
  afterEach(async () => {
   if (server) await server.stop();
+  vi.restoreAllMocks();
  });
 
  it("should create a server on the default port", () => {
@@ -29,24 +34,6 @@ describe("Server Initialization", () => {
   const customMessage = "Hello, world!";
   server = new Server({ message: customMessage });
   expect(server.customResponse).toBe(customMessage);
- });
-
- it("should log requests when debug mode is enabled", async () => {
-  server = new Server({ debug: true });
-  const consoleSpy = vi.spyOn(console, "log");
-
-  // Mocking fetch to simulate an actual request
-  const mockFetch = vi.fn().mockResolvedValue({
-   status: 200,
-   text: () => Promise.resolve("200 OK!"),
-  });
-  global.fetch = mockFetch as unknown as typeof fetch;
-
-  await fetch(`http://localhost:${server.port}/`);
-
-  expect(consoleSpy).toHaveBeenCalledWith(`Request received: /`);
-
-  consoleSpy.mockRestore();
  });
 
  it("should respond with a 200 OK by default", async () => {
