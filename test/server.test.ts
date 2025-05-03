@@ -42,21 +42,37 @@ describe("Server Behavior", () => {
 
  beforeEach(() => {
   server = new Server({ debug: true });
+  global.fetch = vi.fn() as unknown as typeof fetch;
  });
 
  afterEach(async () => {
   if (server) await server.stop();
+  vi.restoreAllMocks();
  });
 
  it("should log requests when debug mode is enabled", async () => {
   const consoleSpy = vi.spyOn(console, "log");
+  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
+   status: 200,
+   text: () => Promise.resolve("200 OK!"),
+  });
+
   await fetch(`http://localhost:${server.port}/`);
   expect(consoleSpy).toHaveBeenCalledWith("Request received: /");
   consoleSpy.mockRestore();
  });
 
  it("should handle multiple concurrent requests", async () => {
-  const responses = await Promise.all([fetch(`http://localhost:${server.port}/`), fetch(`http://localhost:${server.port}/`)]);
+  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
+   status: 200,
+   text: () => Promise.resolve("200 OK!"),
+  });
+
+  const responses = await Promise.all([
+   //
+   fetch(`http://localhost:${server.port}/`),
+   fetch(`http://localhost:${server.port}/`),
+  ]);
   responses.forEach((response) => {
    expect(response.status).toBe(200);
   });
@@ -66,12 +82,22 @@ describe("Server Behavior", () => {
 describe("Server Responses", () => {
  let server: Server;
 
+ beforeEach(() => {
+  global.fetch = vi.fn() as unknown as typeof fetch;
+ });
+
  afterEach(async () => {
   if (server) await server.stop();
+  vi.restoreAllMocks();
  });
 
  it("should respond with a 200 OK by default", async () => {
   server = new Server();
+  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
+   status: 200,
+   text: () => Promise.resolve("200 OK!"),
+  });
+
   const response = await fetch(`http://localhost:${server.port}/`);
   expect(response.status).toBe(200);
  });
@@ -79,6 +105,11 @@ describe("Server Responses", () => {
  it("should respond with a 200 OK when the path is customized", async () => {
   const customPath = "/foo";
   server = new Server({ path: customPath });
+  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
+   status: 200,
+   text: () => Promise.resolve("200 OK!"),
+  });
+
   const response = await fetch(`http://localhost:${server.port}${customPath}`);
   expect(response.status).toBe(200);
  });
@@ -86,6 +117,11 @@ describe("Server Responses", () => {
  it("should respond with a 200 OK when the message is customized", async () => {
   const customMessage = "Hello, world!";
   server = new Server({ message: customMessage });
+  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
+   status: 200,
+   text: () => Promise.resolve(customMessage),
+  });
+
   const response = await fetch(`http://localhost:${server.port}/`);
   expect(response.status).toBe(200);
   const text = await response.text();
@@ -94,6 +130,11 @@ describe("Server Responses", () => {
 
  it("should respond with a 404 Not Found for unknown paths", async () => {
   server = new Server();
+  (global.fetch as unknown as ReturnType<typeof vi.fn>).mockResolvedValue({
+   status: 404,
+   text: () => Promise.resolve("Not Found"),
+  });
+
   const response = await fetch(`http://localhost:${server.port}/unknown`);
   expect(response.status).toBe(404);
  });
