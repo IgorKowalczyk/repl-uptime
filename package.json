@@ -33,7 +33,7 @@
     "@types/node": "22.15.24",
     "@types/supertest": "6.0.3",
     "@vitest/eslint-plugin": "1.2.1",
-    "@vitest/ui": "3.2.1",
+    "@vitest/ui": "3.2.2",
     "eslint": "9.28.0",
     "jiti": "2.4.2",
     "node-fetch": "3.3.2",
