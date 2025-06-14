@@ -27,8 +27,8 @@ importers:
         specifier: 6.0.3
         version: 6.0.3
       '@vitest/eslint-plugin':
-        specifier: 1.2.2
-        version: 1.2.2(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)(vitest@3.2.3)
+        specifier: 1.2.5
+        version: 1.2.5(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)(vitest@3.2.3)
       '@vitest/ui':
         specifier: 3.2.3
         version: 3.2.3(vitest@3.2.3)
@@ -673,8 +673,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@vitest/eslint-plugin@1.2.2':
-    resolution: {integrity: sha512-R8NwW+VxyKqVGcMfYsUbdThQyMbtNcoeg+jJeTgMHqWdFdcS0nrODAQXhkplvWzgd7jIJ+GQeydGqFLibsxMxg==}
+  '@vitest/eslint-plugin@1.2.5':
+    resolution: {integrity: sha512-cfmXz++mkqYpssrKymd7KJumxaZBsfFji2y22QV04kDYKRbiaZ+s4WZL/bzAkcefVKj4KkFctVALHdDZhFhHGg==}
     peerDependencies:
       eslint: '>= 8.57.0'
       typescript: '>= 5.0.0'
@@ -2724,7 +2724,7 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.7.2':
     optional: true
 
-  '@vitest/eslint-plugin@1.2.2(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)(vitest@3.2.3)':
+  '@vitest/eslint-plugin@1.2.5(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)(vitest@3.2.3)':
     dependencies:
       '@typescript-eslint/utils': 8.31.0(eslint@9.29.0(jiti@2.4.2))(typescript@5.8.3)
       eslint: 9.29.0(jiti@2.4.2)
