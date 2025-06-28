@@ -26,7 +26,7 @@
     "test:ui": "vitest --ui"
   },
   "devDependencies": {
-    "@igorkowalczyk/eslint-config": "3.0.8",
+    "@igorkowalczyk/eslint-config": "3.1.0",
     "@igorkowalczyk/prettier-config": "3.0.8",
     "@rollup/plugin-node-resolve": "16.0.1",
     "@rollup/plugin-typescript": "12.1.3",
