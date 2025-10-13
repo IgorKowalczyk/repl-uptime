@@ -15,8 +15,8 @@ importers:
         specifier: 3.1.0
         version: 3.1.0(prettier@3.6.2)
       '@rollup/plugin-node-resolve':
-        specifier: 16.0.1
-        version: 16.0.1(rollup@4.50.1)
+        specifier: 16.0.3
+        version: 16.0.3(rollup@4.50.1)
       '@rollup/plugin-typescript':
         specifier: 12.1.4
         version: 12.1.4(rollup@4.50.1)(tslib@2.8.1)(typescript@5.9.2)
@@ -385,8 +385,8 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution: {integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww==}
 
-  '@rollup/plugin-node-resolve@16.0.1':
-    resolution: {integrity: sha512-tk5YCxJWIG81umIvNkSod2qK5KyQW19qcBF/B78n1bjtOON6gzKoVeSzAE8yHCZEDmqkHKkxplExA8KzdJLJpA==}
+  '@rollup/plugin-node-resolve@16.0.3':
+    resolution: {integrity: sha512-lUYM3UBGuM93CnMPG1YocWu7X802BrNF3jW2zny5gQyLQgRFJhV1Sq0Zi74+dh/6NBx1DxFC4b4GXg9wUCG5Qg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.78.0||^3.0.0||^4.0.0
@@ -2531,7 +2531,7 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
-  '@rollup/plugin-node-resolve@16.0.1(rollup@4.50.1)':
+  '@rollup/plugin-node-resolve@16.0.3(rollup@4.50.1)':
     dependencies:
       '@rollup/pluginutils': 5.2.0(rollup@4.50.1)
       '@types/resolve': 1.20.2
