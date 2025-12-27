@@ -46,20 +46,20 @@ new Server();
 /// ES6
 import Server from "@igorkowalczyk/repl-uptime";
 new Server({
- port: 8080,
- path: "/",
- message: "🤙 Don't let your repl go to sleep!",
- debug: true,
+  port: 8080,
+  path: "/",
+  message: "🤙 Don't let your repl go to sleep!",
+  debug: true,
 });
 
 /// CommonJS
 const Server = require("@igorkowalczyk/repl-uptime");
 
 new Server({
- port: 8080,
- path: "/",
- message: "🤙 Don't let your repl go to sleep!",
- debug: true,
+  port: 8080,
+  path: "/",
+  message: "🤙 Don't let your repl go to sleep!",
+  debug: true,
 });
 ```
 
