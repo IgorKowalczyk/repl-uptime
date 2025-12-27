@@ -1,7 +1,7 @@
 {
   "name": "@igorkowalczyk/repl-uptime",
   "description": "🤙 Don't let your repl go to sleep! Create a http server with just few lines of code and keep pinging it!",
-  "version": "1.6.2",
+  "version": "1.6.1",
   "author": "Igor Kowalczyk",
   "license": "MIT",
   "repository": "IgorKowalczyk/repl-uptime",
