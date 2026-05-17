@@ -14,6 +14,13 @@
 
 ---
 
+# 🚫 Repository Deprecated
+
+> [!CAUTION]
+> This repository is deprecated and no longer maintained. No further updates, bug fixes, or support will be provided.
+
+---
+
 ## 📥 Installation
 
 **Node.js v12.0.0 or newer is required.**
